@@ -1,0 +1,402 @@
+body{
+  margin: 0;
+  font-family: 'Grandstander', cursive;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0; /*Внешний отступ у всех заголовков на сайте*/
+}
+
+/*Плавное появление самих страниц*/
+
+@-webkit-keyframes Appearance {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-o-keyframes Appearance {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes Appearance {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes Appearance {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/*Container*/
+.container{ /*Параметры для всех страниц на сайте*/
+  width: 100%; /*Ширина в %*/
+  max-width: 900px; /*максимальная ширина*/
+  margin: 0 auto; /*Внешний отступ*/
+}
+
+/*Intro*/
+.intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: url("images/background1.jpg"); /*Фоновая картинка*/
+  background-position: center;
+  background: opacity .5;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: Appearance;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.1,-.6,.2,0);
+}
+
+.intro__inner{
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro__title{
+letter-spacing: 2px;
+  font-size: 45px;
+  font-weight: 700;
+  color: #fff;
+  text-transform:none;
+  line-height: 1.2;
+  margin: 50px 0 -20px 0;
+}
+
+
+/*Header*/
+.header{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header_inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/*Nav*/
+.nav{
+
+  padding-top: 70px;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.nav__link.lang{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 59px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  transition: color .2s linear;
+}
+
+.nav__link:after{
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  display: none;
+  background-color: #000;
+  transition: color .2s linear;
+  position: absolute;
+}
+
+.nav__link:hover:after{
+  display: block;
+}
+
+
+.nav__link:hover {
+  color: #000;
+}
+
+.nav__link-lang-en,{
+    margin: 0 auto;
+    color: #fff;
+    text-decoration: none;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.translate{
+    background: transparent;
+    border: none;
+
+}
+
+.img_lang{
+    width: 100%;
+    width: 25px;
+
+}
+
+/* button */ /*Кнопка pirkt на первой странице*/
+.btn{
+  display: inline-block;
+  vertical-align: top;
+  padding: 6px 20px; /*<---размеры границ кнопки*/
+  text-decoration: none;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 3px solid #fff; /*<---толщина и цвет границ*/
+  transition: background .2s linear, color .2s linear; /*плавность переливания при наведении*/
+}
+
+.btn:hover{
+  background-color: #fff; /*<---цвет фона при наведении*/
+  color: #000; /*<---цвет текста при наведении*/
+}
+
+/*button2*/ /*Кнопка home на странице MyLife*/
+
+.btn__2 {
+  display: inline-block;
+  vertical-align: top;
+  padding: 6px 20px; /*<---размеры границ кнопки*/
+  text-decoration: none;
+  margin-top: 30px; /*внешний отступ сверху*/
+  font-size: 14px; /*размер шрифта текста*/
+  color: #000; /*цвет текста*/
+  text-transform: uppercase;
+  border: 3px solid #000; /*<---толщина и цвет границ*/
+  transition: background .2s linear, color .2s linear; /*плавность переливания при наведении*/
+}
+
+.btn__2:hover {
+  background-color: #333; /*<---цвет фона при наведении*/
+  color: #fff; /*<---цвет текста при наведении*/
+}
+
+/* Social */
+.container_bottom{
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.social__inner{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+}
+
+.social{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+.social__media{
+  width: 85%;
+  position: relative;
+  padding: 60px 0;
+  padding-right: 30px;
+}
+
+/*Соц. иконки*/
+.image__social{
+  width: 30px;
+  position: absolute;
+  display: inline;
+  justify-content: space-between;
+  opacity: .7;
+  transition: transform .1s linear;
+  transition: opacity .1s linear;
+}
+
+/*Движение социальных иконок*/
+.image__social:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/*Прозрачность иконок при наведении*/
+.image__social:hover {
+  opacity: 1;
+}
+
+/* Section */
+
+.section{
+  padding: 70px;
+  animation-name: Appearance;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.1,-.6,.2,0);
+}
+
+.section__header{
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.section__title{
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.section__text{
+  font-size: 16px;
+}
+
+
+
+/* Page MyLife */
+
+.page__2{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: url("images/background3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation-name: Appearance;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.1,-.6,.2,0);
+}
+
+/* Page Pictures */
+.pictures {
+  display: flex;
+  margin-top: 70px;
+  animation-name: Appearance;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.1,-.6,.2,0);
+}
+
+/*Плавность движения фоток*/
+.pictures__photo {
+  flex: 1 1 0;
+  text-align: center;
+  transition: transform .2s linear;
+}
+/*Фото*/
+.photo {
+    display: flex;
+    margin: 0 25px;
+    width: 120px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+/*Движение фоток*/
+.pictures__item:hover .pictures__photo {
+  transform: scale(1.5);
+}
+
+/* Page Routine */
+
+.table__routine{
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  box-sizing:border-box;
+
+  }
+
+ td {
+   border: 1.5px solid #000;
+   width: 100%;
+   padding: 3px 10px;
+   border-left: 1.5px solid #000;
+ }
+
+  tr {
+  width: 100px;
+  }
+
+/* contacts */
+
+.contacts {
+  display: block;
+  text-align: center;
+  margin: 60px auto;
+  margin-bottom: 0;
+
+}
+
+/* gmail */
+
+.email {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px 25px;
+  border: 3px solid #333;
+  color: #000;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #fff;
+}
+
+.email:hover {
+background-color: #000;
+color: #fff;
+transition: background .2s linear, color .2s linear;
+}
+
+/* button 3 */
+
+.btn__3 {
+  display: inline-block;
+  vertical-align: top;
+  padding: 6px 12px;
+  color: #000;
+  text-transform: uppercase;
+  border: 3px solid #000;
+  margin-left: 350px;
+  text-decoration: none;
+}
+
+.btn__3:hover {
+  background-color: #333;
+  color: #fff;
+  transition: background .3s linear, color .3s linear;
+}
